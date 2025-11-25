@@ -1,0 +1,144 @@
+---
+title: "Introduction to E-Business Analytics"
+subtitle: "Performance Metrics Report"
+author: "Gary Tran--658987821"
+date: "2025-09-09"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Executive Summary{-}
+
+The report analyzes website performance data through engagement, performance, and server load. Data analyzed included ranges, medians, and highest scores. The report further focuses on the relationship and interpretation of daily user engagement and website performance. Scatter plots and correlation coefficient calculations suggest a linear relationship and moderate correlation. Business optimization strategy suggests that business e-managers should focus on improving user engagement to improve overall website performance. 
+
+# Website Performance Analysis 
+```{r}
+# Create website performance dataset with business terminology
+webperfo <- data.frame(
+  engagement = airquality$Temp,
+  performance = airquality$Ozone,
+  server_load = airquality$Wind
+)
+```
+
+## a.
+
+```{r}
+# View first few rows of data
+head(webperfo)
+```
+
+There are 3 columns for each engagement, performance and server load. Seeing the first few rows of data allows all variables to be seen without being overwhelming, a useful visuals when reporting to relevant parties.
+
+## b.
+
+```{r}
+# Summarize all columns data
+summary(webperfo)
+```
+
+There are 37 Na's in performance column. The summary indicates the range of engagement scores from 56 to 97. 
+
+## c.
+
+```{r}
+# Count days of website data 
+nrow(webperfo)
+```
+
+153 days of website data. The quantity of days of data is useful in determining how representative the data is as a whole compared to just a sample amount, factors that affect the accuracy and reliability of median, mean averages and score ranges. 
+
+## d.
+
+```{r}
+# Find highest daily engagement score
+max(webperfo$engagement)
+```
+
+97 is higher than the median 79 in engagement. This indicates that there are observations of data where the value of engagement has been more than the middle median of all data. 
+
+## e.
+
+```{r}
+# Find highest performance score 
+max(webperfo$performance, na.rm = TRUE)
+```
+
+The na.rm removes the Na values in performance which disrupts the calculations required to find the highest value and returns with Na. Engagement did not have Na values. 
+
+# Understanding Relationships 
+
+## a.
+
+```{r}
+# Create a scatter plot 
+plot(webperfo$engagement, webperfo$performance)
+```
+
+The scatter plot is missing a title as to what it's showing, a trend line to show the relationship, and axis labels to identify the variables, all factors that help users to understand for a business presentation. 
+
+## b.
+
+```{r}
+# Create a scatter plot with title and axis labels 
+plot(x = webperfo$engagement, y = webperfo$performance,
+     main = "User Engagement vs Website Performance",
+     xlab = "Daily User Engagement Score", 
+     ylab = "Website Performance Score")
+```
+
+The title helps a business audience to understand what the scatter plot is intending to show while the axis labels aid to identify each variable of the data. 
+
+## c.
+
+```{r}
+# Create a scatter plot with title and axis labels 
+plot(x = webperfo$engagement, y = webperfo$performance,
+     main = "User Engagement vs Website Performance",
+     xlab = "Daily User Engagement Score", 
+     ylab = "Website Performance Score",
+     pch = 16, col = "blue")
+```
+
+Website performance increases in a linear pattern with more daily user engagement score.
+
+## d.
+
+```{r}
+# Create a scatter plot with title and axis labels 
+plot(x = webperfo$engagement, y = webperfo$performance,
+     main = "User Engagement vs Website Performance",
+     xlab = "Daily User Engagement Score", 
+     ylab = "Website Performance Score",
+     pch = 16, col = "blue")
+
+# Add trend line 
+abline(lm(performance ~ engagement, data = webperfo), 
+       col = "red", lwd = 2)
+```
+
+The trend is that with engagement scores increasing, the overall line for performance goes up. 
+
+# Business Interpretation 
+
+## a.
+
+```{r}
+# Correlation coefficient 
+cor(webperfo$engagement, webperfo$performance, use = "complete.obs")
+```
+
+The correlation coefficient is .6983603 suggesting it has a moderate (.3-.7) relationship that almost borders over strong (over .7).
+
+## b.
+
+When business engagement is high, website performance will follow in a moderate increase compared the increase in engagement. For e-business manager, the business optimization strategy is to focus on increasing website user engagement to increase the overall website performance.  
+
+
