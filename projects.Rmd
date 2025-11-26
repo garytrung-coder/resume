@@ -7,16 +7,17 @@ title: "My Projects"
 
 Here are some of my key projects demonstrating various data analysis skills.
 
-### Project 1: Government Data Analysis
+### Project 1: Business Performance Dashboard
 
-**Objective:** Analyze public datasets to extract business insights
+**Objective:** Clean and analyze operational data to identify performance 
+patterns
 
 **Key Skills:**
 
-- API data access
-- Data quality assessment
-- Aggregation and summarization
-- Business recommendation development
+- CSV data processing
+- Missing data handling
+- Data visualization
+- Executive reporting
 
 [View detailed analysis →](project1.html)
 

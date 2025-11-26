@@ -18,20 +18,19 @@ in data analysis, business intelligence, and statistical computing.
 
 **Visualization & Reporting:**
 
-- ggplot2 for professional visualizations
+- Professional visualizations
 - R Markdown for reproducible reports
 - Data storytelling for business audiences
 
 **Data Sources:**
 
 - CSV file processing
-- Government open data (via APIs)
 - Business performance datasets
 
 ## Education
 
 **VIU** - E-Management Program  
-*Expected Graduation: [Year]*
+*Expected Graduation: [2027]*
 
 Relevant Coursework:
 
@@ -43,9 +42,9 @@ Relevant Coursework:
 
 Feel free to connect with me:
 
-- Email: [your.email@example.com](mailto:your.email@example.com)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- GitHub: [yourusername](https://github.com/yourusername)
+- Email: [Roland@my.viu.ca](mailto:Roland@my.viu.ca)
+- LinkedIn: [Roland](https://linkedin.com/in/Roland)
+- GitHub: [garytrung-coder](https://github.com/garytrung-coder)
 
 ---
 
